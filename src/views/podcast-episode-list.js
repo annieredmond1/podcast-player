@@ -22,10 +22,13 @@ function PodcastEpisodeList(props) {
           formattedEps.map((ep) => (
             <li
               key={ep.title} className={styles.episodeListItem} alt={ep.title}
-              onClick={() => props.loadPodcastEpisode(ep)}
             >
               <div>
                 {ep.title}
+              </div>
+              <div className={styles.episodeListActionItems}>
+                <button className={styles.episodeListButton} onClick={() => props.loadPodcastEpisode(ep)}>Play</button>
+                <button className={styles.episodeListButton} onClick={() => props.addToPlaylist(ep)}>Add to playlist</button>
               </div>
             </li>
           ))
